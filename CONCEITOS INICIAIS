@@ -1,0 +1,26 @@
+print ("Meu primeiro programa")
+
+
+P = 75.5
+
+print("Você pesa {} quilos" .format(P))
+
+print(f"Você pesa {P} quilos")
+
+P= input("Digite o seu peso: ")
+
+print(f"Você pesa {P} quilos")
+
+
+X= int(input("Informe o valor de X: "))
+print(f"O dobro de X é: {X*2}")
+
+Y=float(input("Informe o valor de Y: "))
+print(f"O valor de Y com 20% de bônus é {Y*1.2}")
+
+A = bool(input("Informe o Valor de A (aperte Enter para Falso ou digite algo para verdadeiro:)"))
+XPTO = input("Informe o vlor de XPTO (texto): ")
+Nota = float(input("Informe o Valor da Nota: "))
+
+print("-" * 20)
+print(f"Resultado: A={A}, XPTO={XPTO}, Nota={Nota}")
