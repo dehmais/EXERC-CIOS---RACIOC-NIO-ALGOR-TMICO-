@@ -157,3 +157,43 @@ if velocidade > 80:
     print("Você foi multado! o valor é R$", multa)
 else:
     print("Você não foi multado!")
+
+#EXERCÍCIO 16 (COMPOSTO)
+celcius = float(input("Digite a temperatura em celcius:"))
+conversao = input("Digite (F) para converter para Fahrenheit e (K) para converter para Kelvin:")
+
+if conversao == "F":
+    fahrenheit = float((celcius * 9/5) + 32)
+    print ("A temperatura em Fahrenheit é", fahrenheit)
+elif conversao == "K":
+    kelvin = celcius + 273.15
+    print("A temperatura em Kelvin é", kelvin)
+else:
+    print:("Escolha um sistema válido")
+
+
+#EXERCÍCIO 17 (SIMPLES)
+area = float(input("Digite o tamanho da área em metros quadrados: "))
+litros = area / 3
+
+if litros <= 18:
+    print("Você precisa de apenas 1 lata de tinta, o valor total é de R$ 80,00")
+else:
+    latas = litros // 18
+    if litros % 18 != 0:
+        latas += 1
+    print(f"Você precisa de {int(latas)} latas de tinta, o valor total é de R$ {latas * 80}")
+
+#EXERCÍCIO 18
+vcasa = float(input("Digite o valor da casa:"))
+salario = float(input("Digite o valor do seu salário:"))
+anos = float(input("Digite em quantos anos você pretender pagar:"))
+
+tempo = anos * 12
+prestacao = vcasa / tempo
+limite = salario * 0.3
+
+if limite > prestacao:
+    print("Seu empréstimo foi aprovado")
+else:
+    print("Seu emprestimo foi negado")
