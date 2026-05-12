@@ -1,0 +1,159 @@
+#EXERCÍCIO 1 (SIMPLES)
+
+idade=int(input("Digite sua idade:"))
+
+if idade >=16:
+    print("Você já pode votar")
+else:
+    print("Você ainda não tem idade para votar")
+
+
+#EXERCÍCIO 2 (COMPOSTO)
+
+numero= int(input("Digite um número inteiro:"))
+if numero >0:
+    print("O número", numero, "é positivo")
+elif numero < 0:
+    print("O número", numero, "é negativo")
+else:
+    print("O número é Zero")
+
+
+#EXERCÍCIO 3 (SIMPLES)
+
+valor= float(input("Digite o valor total da compra:"))
+if valor > 100:
+    desconto= 10 / 100 * valor
+    valorfinal = valor - desconto
+    print(valorfinal)
+else:
+    print("O valor da sua comprar é R$", valor, "Nas compras acima de R$100,00, você ganha 10% de desconto")
+
+#EXERCÍCIO 4 (COMPOSTO)
+
+nota= float(input("Digite sua nota:"))
+
+if nota >=9.0:
+    print("Parabéns!! Você foi aprovado")
+elif nota >= 7.0:
+    print("Aprovado")
+elif nota >=4.0:
+    print("Em recuperação")
+else:
+    print("Reprovado")
+
+#EXERCÍCIO 5 (SIMPLES)
+
+numero1 =int(input("Digite um número inteiro:"))
+
+if numero1 % 2 == 0:
+    print("Seu número é par")
+else:
+    print("Seu número é ímpar")
+
+
+#EXERCÍCIO 6 (COMPOSTO)
+num1 = int(input("Escolha um número inteiro:"))
+num2 = int(input("Escolha mais um número inteiro:"))
+
+if num1 > num2:
+    print("O número", num1, "é maior que o número", num2)
+elif num1 < num2:
+    print ("O número", num2, "é maior que o número", num1)
+else:
+    print("Os números são iguais")
+
+#EXERCÍCIO 7 (SIMPLES)
+usuario_correto = input("Digite um nome de usuário:")
+if usuario_correto == "admin":
+    print("Acesso concedido")
+else:
+    print("Usuário desconhecido")
+
+#EXERCÍCIO 8 - (SIMPLES) corrigir
+peso = float(input("Digite seu peso:"))
+altura = float(input("Digite sua altura:"))
+
+imc = float(peso/(altura*altura))
+
+if imc > 25:
+    print("Acima do peso ideal")
+else:
+    print("Peso dentro da normalidade")
+
+#EXERCÍCIO 9 - (COMPOSTO) corrigir
+base=float(input("Digite o tamanho da base do triângulo:"))
+ladodir=float(input("Digite o tamanho do lado direito do triângulo:"))
+ladoesq=float(input("Digite o tamanho do lado esquerdo do triângulo:"))
+
+if base == ladodir and ladoesq:
+    print("Seu triangulo é equilátero")
+elif base != ladodir and ladoesq:
+    print("Seu triângulo é escaleno")
+else:
+    print("Seu triângulo é isóceles")
+
+#EXERCÍCIO 10 (SIMPLES)
+
+numero5 = float(input("Escolha um numero:"))
+if numero5 % 5 == 0:
+    print("Seu número é multiplo de 5")
+else:
+    print("Seu número não é múltiplo de 5")
+
+#EXERCÍCIO 11 (COMPOSTO)
+
+idadeatle = int(input("Digite sua idade: "))
+
+if idadeatle >= 18:
+    print("Adulto")
+elif idadeatle >= 14:
+    print("Juvenil B")
+elif idadeatle >= 11:
+    print("Juvenil A")
+elif idadeatle >= 8:
+    print("Infantil B")
+elif idadeatle >= 5:
+    print("Infantil A")
+else:
+    print("Sem categoria")
+
+#EXERCÍCIO 12 (SIMPLES) corrigir
+distancia = float(input("Qual a distância que será percorrida:"))
+
+if distancia < 200:
+  ate200 = float(distancia * 0.5)
+  print("O preço da passagem é R$", ate200)
+else:
+  mais200 = float(distancia * 0.45)
+  print("O preço da passagem é R$", mais200)
+
+#EXERCÍCIO 13 (SIMPLES)
+
+ano = int(input("Escolha um ano:"))
+if ano % 4 == 0:
+    print("Esse ano é bissexto")
+else:
+    print("Esse ano não é bissexto")
+
+#EXERCÍCIO 14 (SIMPLES)
+
+salario = float(input("Digite o seu salário:"))
+if salario >= 1621.00:
+    au10 = 10 / 100 * salario
+    aumento10 = salario + au10
+    print("Seu novo salário é R$", aumento10)
+else:
+    au15 = 15 / 100 * salario
+    aumento15 = salario + au15
+    print("Seu novo salário é R$", aumento15)
+
+#EXERCÍCIO 15 (SIMPLES)
+
+velocidade = float(input("Digite a velocidade do carro:"))
+if velocidade > 80:
+    ultrapassou = float(velocidade - 80)
+    multa = ultrapassou * 7
+    print("Você foi multado! o valor é R$", multa)
+else:
+    print("Você não foi multado!")
