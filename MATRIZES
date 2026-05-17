@@ -1,0 +1,227 @@
+#1
+import numpy as np
+arr1 = np.zeros ((2,3))
+print(arr1)
+
+#2
+import numpy as np
+arr2 = np.ones ((2,3))
+print(arr2)
+
+#3
+import numpy as np
+arr3 = np.eye ((3))
+print(arr3)
+
+#4
+matriz = [
+    [1,2,3],
+    [4,5,6]
+]
+
+elemento = matriz [1] [2]
+print("Elemento:", elemento)
+
+matriz [0] [1] = 9
+print("Matriz modificada", matriz)
+
+#5
+import numpy as np
+
+arr_float = np.array ([1,2,3], dtype=float)
+arr_tuple = np.array((4,5,6))
+
+print(arr_float)
+print(arr_tuple)
+
+#6
+import numpy as np
+
+matriz = np.transpose ([[1,2], [3,4]])
+print(matriz)
+
+
+
+#EXERCÍCIOS ENTREGAS
+#1
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+soma = sum(sum(linha) for linha in matriz)
+print(soma)
+
+#2
+n = int(input("Digite o valor de n: "))
+
+matriz = []
+
+for i in range(n):
+    linha = []
+    for j in range(n):
+        linha.append(1 if i == j else 0)
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+#3
+matriz = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+]
+
+num = int(input("Escolha um número: "))
+
+encontrado = any(num in linha for linha in matriz)
+
+print("Está na matriz" if encontrado else "Não está")
+
+#4
+matriz = [
+    [1, 2],
+    [3, 4]
+]
+
+matriz[0], matriz[1] = matriz[1], matriz[0]
+
+print(matriz)
+
+#5
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+k = float(input("Escolha um número: "))
+
+matriz = [[elemento * k for elemento in linha] for linha in matriz]
+
+print(matriz)
+
+#6
+matriz = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+pares = sum(1 for linha in matriz for elemento in linha if elemento % 2 == 0)
+
+print(pares)
+
+#7
+import random
+
+matriz = [[random.randint(1, 100) for _ in range(3)] for _ in range(3)]
+
+maior = max(max(linha) for linha in matriz)
+
+print(matriz)
+print("Maior:", maior)
+
+#8
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for linha in matriz:
+    print(sum(linha) / len(linha))
+
+#9
+matriz = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+]
+
+n = len(matriz)
+soma = sum(matriz[i][i] for i in range(n))
+
+print(soma)
+
+#10
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+transposta = [[matriz[j][i] for j in range(len(matriz))]
+              for i in range(len(matriz[0]))]
+
+print(transposta)
+
+#11
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+colunas = len(matriz[0])
+
+somas = [sum(matriz[i][j] for i in range(len(matriz)))
+         for j in range(colunas)]
+
+print(somas)
+
+#12
+matriz = [
+    [1, 2, 3],
+    [2, 5, 6],
+    [3, 6, 9]
+]
+
+n = len(matriz)
+
+simetrica = all(matriz[i][j] == matriz[j][i]
+                for i in range(n) for j in range(n))
+
+print(simetrica)
+
+#13
+matriz = [[i + j for j in range(5)] for i in range(5)]
+
+n = len(matriz)
+
+for i in range(n):
+    print(matriz[i][n - 1 - i])
+
+#14
+A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+
+linhas_A = len(A)
+colunas_A = len(A[0])
+colunas_B = len(B[0])
+
+resultado = [[0]*colunas_B for _ in range(linhas_A)]
+
+for i in range(linhas_A):
+    for j in range(colunas_B):
+        for k in range(colunas_A):
+            resultado[i][j] += A[i][k] * B[k][j]
+
+print(resultado)
+
+#15
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+n = len(matriz)
+
+rotacionada = [[matriz[n - 1 - j][i] for j in range(n)]
+               for i in range(n)]
+
+print(rotacionada)
