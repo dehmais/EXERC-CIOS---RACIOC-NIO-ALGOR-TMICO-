@@ -4,7 +4,7 @@ O objetivo é praticar lógica de programação, resolução de problemas e conc
 Os exercícios abordam temas como:
 - Estruturas condicionais
 - Estruturas de repetição
-- Listas
+- Listas e Vetores
 - Matriz
 - Dicionários
 - Manipulação de dados
