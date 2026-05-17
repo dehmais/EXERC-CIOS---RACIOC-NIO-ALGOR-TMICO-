@@ -1,0 +1,309 @@
+#1
+pessoa = {
+    "nome": "Ana Silva",
+    "idade": 28,
+    "cidade": "São Paulo"
+}
+
+chave = input("Digite uma chave (nome, idade ou cidade): ")
+
+if chave in pessoa:
+    print(f"{chave}: {pessoa[chave]}")
+else:
+    print(f"Chave '{chave}' não encontrada no dicionário.")
+
+#2
+produtos = {
+    "arroz": 25.90,
+    "feijão": 8.50,
+    "macarrão": 4.75
+}
+
+print("Produtos disponíveis:", list(produtos.keys()))
+
+produto = input("Qual produto deseja alterar? ").lower()
+
+if produto in produtos:
+    novo_preco = float(input(f"Digite o novo preço para '{produto}': R$ "))
+    produtos[produto] = novo_preco
+    print("\nDicionário atualizado:")
+    for item, preco in produtos.items():
+        print(f"  {item}: R$ {preco:.2f}")
+else:
+    print(f"Produto '{produto}' não encontrado.")
+
+#3
+cadastro = {}
+
+nome = input("Digite o nome: ")
+idade = int(input("Digite a idade: "))
+
+cadastro[nome] = idade
+
+print("\nDicionário final:")
+print(cadastro)
+
+#4
+pares = []
+
+for i in range(1, 4):
+    print(f"\nPar {i}:")
+    chave = input("  Digite a chave: ")
+    valor = input("  Digite o valor: ")
+    pares.append((chave, valor))
+
+dicionario = dict(pares)
+
+print("\nDicionário criado:")
+for chave, valor in dicionario.items():
+    print(f"  {chave}: {valor}")
+
+#5
+dados = {
+    "nome": "João",
+    "idade": 30,
+    "cidade": "Curitiba",
+    "profissão": "Desenvolvedor"
+}
+
+print("Dicionário atual:")
+for chave, valor in dados.items():
+    print(f"  {chave}: {valor}")
+
+resposta = input("\nDeseja apagar todos os dados? (sim/não): ").lower()
+
+if resposta == "sim":
+    dados.clear()
+    print("\nTodos os dados foram apagados!")
+else:
+    print("\nOs dados foram mantidos.")
+
+print("\nDicionário final:")
+print(dados)
+
+#6
+original = {
+    "nome": "Fernanda",
+    "idade": 25,
+    "cidade": "Curitiba",
+    "profissão": "Designer"
+}
+
+copia = original.copy()
+
+print("Antes da alteração:")
+print(f"  Original: {original}")
+print(f"  Cópia:    {copia}")
+
+copia["cidade"] = "São Paulo"
+
+print("\nDepois da alteração:")
+print(f"  Original: {original}")
+print(f"  Cópia:    {copia}")
+
+print("\nComparação por chave:")
+for chave in original:
+    valor_original = original[chave]
+    valor_copia = copia[chave]
+    status = " igual" if valor_original == valor_copia else "  alterado"
+    print(f"  {chave}: '{valor_original}' → '{valor_copia}' ({status})")
+
+#7
+entrada = input("Digite os nomes separados por vírgula: ")
+
+nomes = [nome.strip() for nome in entrada.split(",")]
+
+dicionario = dict.fromkeys(nomes, 0)
+
+print("\nDicionário criado:")
+for nome, valor in dicionario.items():
+    print(f"  {nome}: {valor}")
+
+#8
+alunos = {
+    "Ana": 9.5,
+    "Carlos": 7.2,
+    "Beatriz": 8.8,
+    "Pedro": 6.4,
+    "Mariana": 10.0
+}
+
+print("Alunos cadastrados:", list(alunos.keys()))
+
+nome = input("\nDigite o nome do aluno: ").strip().capitalize()
+
+nota = alunos.get(nome, None)
+
+if nota is not None:
+    if nota >= 7:
+        status = "Aprovado"
+    else:
+        status = "Reprovado"
+    print(f"\nAluno:  {nome}")
+    print(f"Nota:   {nota}")
+    print(f"Status: {status}")
+else:
+    print(f"\nAluno '{nome}' não encontrado no sistema.")
+    print("Verifique o nome e tente novamente.")
+
+#9
+produtos = {
+    "Notebook": 3599.90,
+    "Mouse": 129.90,
+    "Teclado": 249.90,
+    "Monitor": 1299.90,
+    "Headset": 399.90
+}
+
+print("=" * 35)
+print("       CATÁLOGO DE PRODUTOS")
+print("=" * 35)
+
+print("\n CHAVES (produtos disponíveis):")
+for chave in produtos.keys():
+    print(f"  {chave}")
+
+print("\n VALORES (preços disponíveis):")
+for valor in produtos.values():
+    print(f"  R$ {valor:.2f}")
+
+print("\n PARES CHAVE-VALOR (produto + preço):")
+for chave, valor in produtos.items():
+    print(f"  {chave:<10} R$ {valor:.2f}")
+
+print("\n" + "=" * 35)
+print(f"  Total de produtos: {len(produtos)}")
+menor = min(produtos, key=produtos.get)
+maior = max(produtos, key=produtos.get)
+print(f"  Mais barato:  {menor} (R$ {produtos[menor]:.2f})")
+print(f"  Mais caro:    {maior} (R$ {produtos[maior]:.2f})")
+print("=" * 35)
+
+#10
+dados = {
+    "nome": "Lucas",
+    "idade": 28,
+    "cidade": "Curitiba",
+    "profissao": "Analista",
+    "hobby": "Fotografia"
+}
+
+def exibir(d):
+    for chave, valor in d.items():
+        print(f"  {chave}: {valor}")
+
+print("Dicionario inicial:")
+exibir(dados)
+
+print("\nChaves disponiveis:", list(dados.keys()))
+chave = input("Chave para remover com pop(): ").strip().lower()
+removido = dados.pop(chave, None)
+if removido:
+    print(f"'{chave}: {removido}' removido.")
+else:
+    print(f"Chave '{chave}' nao encontrada.")
+
+ultimo = dados.popitem()
+print(f"Ultimo item removido com popitem(): '{ultimo[0]}: {ultimo[1]}'")
+
+print("\nApós remoções:")
+exibir(dados)
+
+nova_chave = input("\nNova chave para update(): ").strip().lower()
+novo_valor = input("Novo valor: ").strip()
+dados.update({nova_chave: novo_valor})
+
+print("\nDicionario final:")
+exibir(dados)
+
+#11
+usuarios = {"Ana": 28, "Carlos": 35, "Beatriz": 22}
+
+def exibir(d):
+    for k, v in d.items():
+        print(f"  {k}: {v}")
+
+while True:
+    print("\n--- MENU ---")
+    opcoes = ["1.Exibir", "2.Buscar", "3.Adicionar", "4.Atualizar",
+              "5.Remover", "6.Remover ultimo", "7.Copiar",
+              "8.Fromkeys", "9.Update", "10.Limpar", "11.Dict()", "0.Sair"]
+    print(" | ".join(opcoes))
+    op = input("Opcao: ").strip()
+
+    if op == "1":
+        print("Nomes:", list(usuarios.keys()))
+        print("Idades:", list(usuarios.values()))
+        print("Pares:"); exibir(usuarios)
+
+    elif op == "2":
+        nome = input("Nome: ").capitalize()
+        resultado = usuarios.get(nome)
+        print(f"{nome}: {resultado} anos" if resultado else "Usuario nao encontrado.")
+
+    elif op == "3":
+        nome = input("Nome: ").capitalize()
+        idade = int(input("Idade: "))
+        usuarios[nome] = idade
+        print(f"{nome} adicionado.")
+
+    elif op == "4":
+        nome = input("Nome: ").capitalize()
+        if nome in usuarios:
+            usuarios[nome] = int(input("Nova idade: "))
+            print("Idade atualizada.")
+        else:
+            print("Usuario nao encontrado.")
+
+    elif op == "5":
+        nome = input("Nome: ").capitalize()
+        removido = usuarios.pop(nome, None)
+        print(f"{nome} removido." if removido else "Usuario nao encontrado.")
+
+    elif op == "6":
+        if usuarios:
+            item = usuarios.popitem()
+            print(f"Removido: {item[0]}: {item[1]}")
+        else:
+            print("Dicionario vazio.")
+
+    elif op == "7":
+        copia = usuarios.copy()
+        nome = input("Nome para alterar na copia: ").capitalize()
+        if nome in copia:
+            copia[nome] = int(input("Nova idade na copia: "))
+        print("Original:"); exibir(usuarios)
+        print("Copia:"); exibir(copia)
+
+    elif op == "8":
+        nomes = [n.strip().capitalize() for n in input("Nomes (virgula): ").split(",")]
+        padrao = int(input("Idade padrao: "))
+        novo = dict.fromkeys(nomes, padrao)
+        print("Novo dicionario:"); exibir(novo)
+        if input("Mesclar com principal? (s/n): ") == "s":
+            usuarios.update(novo)
+
+    elif op == "9":
+        pares = [n.strip().capitalize() for n in input("Nomes (virgula): ").split(",")]
+        novo = {nome: int(input(f"Idade de {nome}: ")) for nome in pares}
+        usuarios.update(novo)
+        print("Dicionario atualizado."); exibir(usuarios)
+
+    elif op == "10":
+        if input("Limpar tudo? (s/n): ") == "s":
+            usuarios.clear()
+            print("Dicionario limpo.")
+
+    elif op == "11":
+        n = int(input("Quantos pares? "))
+        tuplas = [(input(f"Chave {i+1}: ").capitalize(), int(input(f"Valor {i+1}: "))) for i in range(n)]
+        novo = dict(tuplas)
+        print("Dicionario criado:"); exibir(novo)
+        if input("Mesclar com principal? (s/n): ") == "s":
+            usuarios.update(novo)
+
+    elif op == "0":
+        print("Encerrando..."); break
+
+    else:
+        print("Opcao invalida.")
