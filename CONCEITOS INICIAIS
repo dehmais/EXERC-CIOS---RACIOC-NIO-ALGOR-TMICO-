@@ -1,6 +1,5 @@
 print ("Meu primeiro programa")
 
-
 P = 75.5
 
 print("Você pesa {} quilos" .format(P))
